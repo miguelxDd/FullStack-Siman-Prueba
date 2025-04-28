@@ -6,17 +6,16 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_DB: fullStackSiman                # Tu base de datos (igual a tu application.properties)
-      POSTGRES_USER: postgres                    # Usuario de tu application.properties
-      POSTGRES_PASSWORD: ah18059                 # Password de tu application.properties
+      POSTGRES_DB: fullStackSiman                
+      POSTGRES_USER: postgres                    
+      POSTGRES_PASSWORD: ah18059                 
     ports:
-      - "5434:5432"                              # Respetamos tu puerto 5434
-    volumes:
+      - "5434:5432"                              
       - postgres_data:/var/lib/postgresql/data
 
   backend:
     build:
-      context: ./fullstack-bakend/fullstack-bakend  # ✅ Aquí está tu Dockerfile del backend (según tu screenshot)
+      context: ./fullstack-bakend/fullstack-bakend  
     container_name: backend_app
     restart: always
     environment:
@@ -30,7 +29,7 @@ services:
 
   frontend:
     build:
-      context: ./productos-app                    # ✅ Aquí está tu Dockerfile del frontend (React)
+      context: ./productos-app                    
     container_name: frontend_app
     restart: always
     ports:
