@@ -6,12 +6,12 @@ Este proyecto es una solución FullStack desarrollada con un backend en **Spring
 ## Pasos para configurar y ejecutar el proyecto
 
 ### 1. Generar el archivo `.jar` del backend
-1. Dirígete a **Maven** y haz clic en `package` o ./mvnw clean package (en la terminal)
+1. Dirígete a **Maven** y haz clic en `package` o ./mvnw clean package -DskipTests (en la terminal)
 2. Esto generará un archivo `.jar` que será utilizado para el despliegue.
 
 ### 2. Crear el Dockerfile
 1. Utiliza el archivo `.jar` generado para configurar el Dockerfile del backend.
-2. Configura también el Dockerfile para el frontend utilizando una versión de **Node.js**.
+2. Configura también el Dockerfile para el frontend utilizando una versión 18 de node
 
 ### 3. Crear el archivo `docker-compose.yml`
 1. El archivo `docker-compose.yml` se utiliza para definir las configuraciones generales necesarias para correr el proyecto automáticamente con Docker.
