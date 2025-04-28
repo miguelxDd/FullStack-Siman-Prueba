@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: fullStackSiman                # Tu base de datos (igual a tu application.properties)
+      POSTGRES_USER: postgres                    # Usuario de tu application.properties
+      POSTGRES_PASSWORD: ah18059                 # Password de tu application.properties
+    ports:
+      - "5434:5432"                              # Respetamos tu puerto 5434
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./fullstack-bakend/fullstack-bakend  # ✅ Aquí está tu Dockerfile del backend (según tu screenshot)
+    container_name: backend_app
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fullStackSiman
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: ah18059
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./productos-app                    # ✅ Aquí está tu Dockerfile del frontend (React)
+    container_name: frontend_app
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
