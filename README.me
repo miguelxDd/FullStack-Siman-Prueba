@@ -1,0 +1,23 @@
+# FullStack-Siman-Prueba
+
+## Descripción
+Este proyecto es una solución FullStack desarrollada con un backend en **Spring Boot**, un frontend en **React**, y una base de datos **PostgreSQL 16**. Todo el proyecto está preparado para ser desplegado utilizando **Docker**, lo que facilita su configuración y ejecución.
+
+## Pasos para configurar y ejecutar el proyecto
+
+### 1. Generar el archivo `.jar` del backend
+1. Dirígete a **Maven** y haz clic en `package`.
+2. Esto generará un archivo `.jar` que será utilizado para el despliegue.
+
+### 2. Crear el Dockerfile
+1. Utiliza el archivo `.jar` generado para configurar el Dockerfile del backend.
+2. Configura también el Dockerfile para el frontend utilizando una versión de **Node.js**.
+
+### 3. Crear el archivo `docker-compose.yml`
+1. El archivo `docker-compose.yml` se utiliza para definir las configuraciones generales necesarias para correr el proyecto automáticamente con Docker.
+
+### 4. Ejecutar el proyecto con Docker
+1. Asegúrate de tener **Docker** instalado y abierto en tu PC.
+2. Clona este repositorio ejecutando el siguiente comando:
+   ```bash
+   git clone https://github.com/miguelxDd/FullStack-Siman-Prueba.git
