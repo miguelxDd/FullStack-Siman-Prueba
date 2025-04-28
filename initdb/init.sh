@@ -10,7 +10,7 @@ if [ "$EXISTE_DATA" -eq "0" ]; then
     psql -U postgres -d fullStackSiman -f /docker-entrypoint-initdb.d/Script.sql
 
     echo " Restaurando backup..."
-    pg_restore -U postgres -d fullStackSiman /docker-entrypoint-initdb.d/siman_pruebaTecnica-backup.backup
+    pg_restore -U postgres -d fullStackSiman /docker-entrypoint-initdb.d/siman_pruebaTecnica-backup.tar
 
     echo "✅ Script y Backup ejecutados correctamente."
 else
