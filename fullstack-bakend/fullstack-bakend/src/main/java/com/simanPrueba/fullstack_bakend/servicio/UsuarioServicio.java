@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class UsuarioServicio implements UserDetailsService {
 
     private final UsuarioRepositorio usuarioRepositorio;

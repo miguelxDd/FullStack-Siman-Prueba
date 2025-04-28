@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 
 @Service
-@RequiredArgsConstructor
+
 public class AuthServicio {
 
         private final UsuarioRepositorio usuarioRepositorio;
